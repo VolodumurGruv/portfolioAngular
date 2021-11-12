@@ -1,0 +1,27 @@
+<header>
+  <div class="menu-btn" (click)="openMenu()">
+    <span class="menu-btn_burger" [class.open]="onOpen"></span>
+  </div>
+  <nav class="nav" [class.open]="onOpen">
+    <ul class="menu-nav" [class.open]="onOpen">
+      <li class="menu-nav_item active" [class.open]="onOpen">
+        <a class="menu-nav_link" routerLink="/" (click)="closeMenu()">Home</a>
+      </li>
+      <li class="menu-nav_item" [class.open]="onOpen">
+        <a class="menu-nav_link" routerLink="/about" (click)="closeMenu()"
+          >About</a
+        >
+      </li>
+      <li class="menu-nav_item" [class.open]="onOpen">
+        <a class="menu-nav_link" routerLink="/projects" (click)="closeMenu()"
+          >My Pojects</a
+        >
+      </li>
+      <li class="menu-nav_item" [class.open]="onOpen">
+        <a class="menu-nav_link" routerLink="/contact" (click)="closeMenu()"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

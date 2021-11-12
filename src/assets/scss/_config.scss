@@ -1,0 +1,50 @@
+$primary-color: rgb(29, 29, 29);
+$secondary-color: #ff652f;
+$nav-width: 25vh;
+
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin mobile {
+  @media (max-width: 950px) {
+    .nav {
+      // doesn't work >> find out why???<<<
+      width: 100%;
+    }
+    .copyright {
+      transform: rotate(90deg) translate(-3rem, -5rem);
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@mixin media-md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}
+
+@function set-text-color($color) {
+  @if (lightness($color) > 40%) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
